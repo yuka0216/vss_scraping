@@ -1,0 +1,47 @@
+.container{
+  width:1500px;
+  margin: 0 auto;
+  min-height: 100%;
+  background-color:#fff;
+  padding: 20px 0 40px 0;
+}
+
+.table{
+  width:90%;
+  margin:20px auto 0;
+}
+.td,th{
+  text-align: center;
+  background-color:#ffffff;
+  font-size:20px;
+  padding:5px 0;
+}
+.th{
+  color:white;
+  background-color:#00ff76;
+  text-shadow: 1px 1px 0 #333;
+}
+
+
+.text-title {
+
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #4cbcd0;
+}
+
+.card-contents {
+  display: block;
+  margin: 20px 0 20px 0;
+  background-color: #fff;
+}
+
+.port-list {
+  display: block;
+  padding: 5px 10px;
+  font-size: 20pt;
+  color: #333;
+  
+}
