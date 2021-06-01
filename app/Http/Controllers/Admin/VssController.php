@@ -15,11 +15,13 @@ class VssController extends Controller
     public function index(Request $request)
     {
         date_default_timezone_set('Asia/Tokyo');
+        //今日から一週間の日付の配列を作成
         for ($i = 0; $i < 7; $i++){
             $day = new Carbon();
-            $weeks[] = $day->modify("+$i days")->format('Y/m/d');
+            $weeks[] = $day->modify("+$i days")->format('Y-m-d');
         }
         
+        //一週間の一日ごとの全体情報を取得、検索があったらそのデータを取得、
         $cond_title = $request->cond_title;
         foreach ($weeks as $day) {
             $vesselQuery = Vessel::where('eta', 'like', $day . "%");
@@ -28,8 +30,8 @@ class VssController extends Controller
             }
             $vessels[] = $vesselQuery->orderBy('eta', 'asc')->get();
         }
-        
         // dd($vessels);
+
         return view('admin.vessel.index',[
             'vessels' => $vessels,
             'cond_title' => $cond_title,
@@ -37,12 +39,13 @@ class VssController extends Controller
         ]);
     }
     
+    //東京ページ
     public function tokyo(Request $request)
     {
         date_default_timezone_set('Asia/Tokyo');
         for ($i = 0; $i < 7; $i++){
             $day = new Carbon();
-            $weeks[] = $day->modify("+$i days")->format('Y/m/d');
+            $weeks[] = $day->modify("+$i days")->format('Y-m-d');
         }
         
         $cond_title = $request->cond_title;
@@ -61,12 +64,13 @@ class VssController extends Controller
         ]);
     }
     
+    //横浜ページ
     public function yokohama(Request $request)
     {
         date_default_timezone_set('Asia/Tokyo');
         for ($i = 0; $i < 7; $i++){
             $day = new Carbon();
-            $weeks[] = $day->modify("+$i days")->format('Y/m/d');
+            $weeks[] = $day->modify("+$i days")->format('Y-m-d');
         }
         
         $cond_title = $request->cond_title;
@@ -85,12 +89,13 @@ class VssController extends Controller
         ]);
     }
     
+    //大阪ページ
     public function ohsaka(Request $request)
     {
         date_default_timezone_set('Asia/Tokyo');
         for ($i = 0; $i < 7; $i++){
             $day = new Carbon();
-            $weeks[] = $day->modify("+$i days")->format('Y/m/d');
+            $weeks[] = $day->modify("+$i days")->format('Y-m-d');
         }
         
         $cond_title = $request->cond_title;
@@ -109,12 +114,13 @@ class VssController extends Controller
         ]);
     }
     
+    //神戸ページ
     public function kobe(Request $request)
     {
         date_default_timezone_set('Asia/Tokyo');
         for ($i = 0; $i < 7; $i++){
             $day = new Carbon();
-            $weeks[] = $day->modify("+$i days")->format('Y/m/d');
+            $weeks[] = $day->modify("+$i days")->format('Y-m-d');
         }
         
         $cond_title = $request->cond_title;
