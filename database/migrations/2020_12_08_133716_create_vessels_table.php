@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+use Carbon\Carbon;
 
 class CreateVesselsTable extends Migration
 {
@@ -17,12 +17,13 @@ class CreateVesselsTable extends Migration
         Schema::create('vessels', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('vessel');
-            $table->dateTime('eta')->nullable();
             $table->string('port');
-            // $table->string('etd');
-            // $table->string('yard');
-            // $table->string('voyage');
+            $table->string('vessel');
+            $table->string('voyage');
+            $table->dateTime('eta')->nullable();
+            $table->string('etd');
+            $table->string('yard');
+            
             
         });
     }

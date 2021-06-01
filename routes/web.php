@@ -12,7 +12,6 @@
 */
 
 Route::group(['prefix' => 'admin/vessel'], function() {
-    // Route::get('/', 'Admin\VssController@add');
     Route::get('/index', 'Admin\VssController@index');
     Route::get('/tokyo','Admin\VssController@tokyo');
     Route::get('/yokohama','Admin\VssController@yokohama');
